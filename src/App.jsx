@@ -1,7 +1,8 @@
 // jsxファイルはreact専用のコンポーネントファイルとして使うことができる
 import React from "react"
+import "./styles.css"
 
-const App = () => {
+export const App = () => {
     return (
         <>
             <h1>test</h1>
@@ -9,6 +10,3 @@ const App = () => {
         </>
     );
 };
-
-//　他のファイルでもAppとして呼び出せるようexportする
-export default App;
