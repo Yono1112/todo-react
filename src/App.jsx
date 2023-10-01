@@ -5,11 +5,8 @@ import "./styles.css"
 export const App = () => {
 	const [todoText, setTodoText] = useState('');
 	const [incompleteTodos, setIncompleteTodos] = useState([
-		'aaa',
-		'bbbbb'
 	])
 	const [completeTodos, setcompleteTodos] = useState([
-		'ccc'
 	]);
 
 	const onChangeTodoText = (event) => setTodoText(event.target.value);
@@ -23,6 +20,30 @@ export const App = () => {
 		}
 	}
 
+	const onClickDelete = (index) => {
+		const newTodos = [...incompleteTodos];
+		newTodos.splice(index, 1);
+		setIncompleteTodos(newTodos);
+	}
+
+	const onClickComplete = (index) => {
+		const newIncompleteTodos = [...incompleteTodos];
+		newIncompleteTodos.splice(index, 1);
+
+		const newCompleteTodos = [...completeTodos, incompleteTodos[index]];
+		setIncompleteTodos(newIncompleteTodos);
+		setcompleteTodos(newCompleteTodos);
+	}
+
+	const onClickReturn = (index) => {
+		const newCompleteTodos = [...completeTodos];
+		newCompleteTodos.splice(index, 1);
+
+		const newIncompleteTodos = [...incompleteTodos, completeTodos[index]];
+		setIncompleteTodos(newIncompleteTodos);
+		setcompleteTodos(newCompleteTodos);
+	}
+
 	return (
 		<>
 			<div className="input-area">
@@ -32,12 +53,12 @@ export const App = () => {
 			<div className="incomplete-area">
 				<p className="title">incomplete TODO</p>
 				<ul>
-					{incompleteTodos.map((todo) => {
+					{incompleteTodos.map((todo, index) => {
 						return (
 						<div key={todo} className="list-row">
 							<li>{todo}</li>
-							<button>finish</button>
-							<button>delete</button>
+							<button onClick={() => onClickComplete(index)}>finish</button>
+							<button onClick={() => onClickDelete(index)}>delete</button>
 						</div>
 						)
 					})}
@@ -46,11 +67,11 @@ export const App = () => {
 			<div className="complete-area">
 				<p className="title">complete TODO</p>
 				<ul>
-					{completeTodos.map((todo) => {
+					{completeTodos.map((todo, index) => {
 						return (
 						<div key={todo} className="list-row">
 							<li>{todo}</li>
-							<button>return</button>
+							<button onClick={() => onClickReturn(index)}>return</button>
 						</div>
 						)
 					})}
