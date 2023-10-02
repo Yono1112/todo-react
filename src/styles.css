@@ -27,14 +27,14 @@ body {
   }
   
   /* htmlのclassを指定する場合は.を最初に入れる*/
-  .input-area {
+  /* .input-area {
 	background-color: #c1ffff;
 	width: 400px;
 	height: 30px;
-	padding: 8px; /*上下左右の余白*/
-	margin: 8px; /*外側に対する余白*/
-	border-radius: 8px; /*角を丸くする*/
-  }
+	padding: 8px;
+	margin: 8px;
+	border-radius: 8px;
+} */
   
   .incomplete-area {
 	background-color: #c6ffe2;
