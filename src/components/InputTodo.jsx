@@ -10,11 +10,11 @@ const style = {
 }
 
 export const InputTodo = (props) => {
-	const { todoText, onChangeTodoText, onClickTodoText} = props;
+	const { todoText, onChangeTodoText, onClickTodoText, isDisabled} = props;
 	return (
 		<div style={style}>
-			<input placeholder="TODO" value={todoText} onChange={onChangeTodoText}/>
-			<button onClick={onClickTodoText}>add</button>
+			<input disabled={isDisabled} placeholder="TODO" value={todoText} onChange={onChangeTodoText}/>
+			<button disabled={isDisabled} onClick={onClickTodoText}>add</button>
 		</div>
 	);
 };

@@ -49,7 +49,12 @@ export const App = () => {
 
 	return (
 		<>
-			<InputTodo todoText={todoText} onChangeTodoText={onChangeTodoText} onClickTodoText={onClickTodoText} />
+			<InputTodo todoText={todoText} onChangeTodoText={onChangeTodoText} onClickTodoText={onClickTodoText} isDisabled={incompleteTodos.length >= 5} />
+			{ incompleteTodos.length >= 5 && (
+				<p style={{color: "red"}}>
+					Please FINISH the task because you have 5 or more TODOs
+				</p>
+			)}
 			<IncompleteTodos incompleteTodos={incompleteTodos} onClickDelete={onClickDelete} onClickComplete={onClickComplete} />
 			<CompleteTodos completeTodos={completeTodos} onClickReturn={onClickReturn} />
 		</>
