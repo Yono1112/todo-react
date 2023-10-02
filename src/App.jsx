@@ -1,6 +1,7 @@
 // jsxファイルはreact専用のコンポーネントファイルとして使うことができる
 import React, { useState } from "react"
 import "./styles.css"
+import { InputTodo } from "./components/InputTodo"
 
 export const App = () => {
 	const [todoText, setTodoText] = useState('');
@@ -46,10 +47,8 @@ export const App = () => {
 
 	return (
 		<>
-			<div className="input-area">
-				<input placeholder="TODO" value={todoText} onChange={onChangeTodoText}/>
-				<button onClick={onClickTodoText}>add</button>
-			</div>
+			<InputTodo todoText={todoText} onChangeTodoText={onChangeTodoText} onClickTodoText={onClickTodoText} />
+			<incompleteTodos />
 			<div className="incomplete-area">
 				<p className="title">incomplete TODO</p>
 				<ul>
