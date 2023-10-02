@@ -1,4 +1,69 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
+body {
+	font-family: sans-serif;
+  }
+  
+  input {
+	border-radius: 16px; /*角を丸くする*/
+	border: none; /*枠線を消す*/
+	padding: 6px 16px; /*上下の余白を6px,左右を16px*/
+	outline: none; /*focusしたときに枠線を消す*/
+  }
+  
+  button {
+	border-radius: 16px; /*角を丸くする*/
+	border: none; /*枠線を消す*/
+	padding: 4px 16px; /*上下の余白を4px,左右を16px*/
+  }
+  
+  /*buttonにカーソルが乗っている時のスタイル*/
+  button:hover {
+	background-color: #ff7fff;
+	color: #fff;
+	cursor: pointer; /*focusしたときにカーソルがポインターに変わる*/
+  }
+  
+  li {
+	margin-right: 8px;
+  }
+  
+  /* htmlのclassを指定する場合は.を最初に入れる*/
+  /* .input-area {
+	background-color: #c1ffff;
+	width: 400px;
+	height: 30px;
+	padding: 8px;
+	margin: 8px;
+	border-radius: 8px;
+} */
+  
+  .incomplete-area {
+	background-color: #c6ffe2;
+	width: 400px;
+	min-height: 200px; /*初期状態で取っておく最低限の高さ*/
+	padding: 8px; /*上下左右の余白*/
+	margin: 8px; /*外側に対する余白*/
+	border-radius: 8px; /*角を丸くする*/
+  }
+  
+  .complete-area {
+	background-color: #ffffe0;
+	width: 400px;
+	min-height: 200px;
+	padding: 8px; /*上下左右の余白*/
+	margin: 8px; /*外側に対する余白*/
+	border-radius: 8px; /*角を丸くする*/
+  }
+  
+  .title {
+	text-align: center; /*textをcenterに持ってくる*/
+	margin-top: 0;
+	font-weight: bold;
+	color: #666;
+  }
+  
+  .list-row {
+	display: flex; /*配下タグを横並びにする*/
+	align-items: center;
+	padding-bottom: 4px;
+  }
+  
